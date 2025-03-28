@@ -6,7 +6,7 @@ import { IOrder } from "@/models/Order";
 import { Loader2, Download } from "lucide-react";
 import { IKImage } from "imagekitio-next";
 import { IMAGE_VARIANTS } from "@/models/Product";
-import { apiClient } from "@/library/api-client";
+import { apiClient } from "@/lib/api-client";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState<IOrder[]>([]);
@@ -69,7 +69,7 @@ export default function OrdersPage() {
                       alt={`Order ${order._id?.toString().slice(-6)}`}
                       transformation={[
                         {
-                          quality: 60,
+                          quality: "60",
                           width: variantDimensions.width.toString(),
                           height: variantDimensions.height.toString(),
                           cropMode: "extract",

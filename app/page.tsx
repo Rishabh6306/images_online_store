@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ImageGallery from "./Components/ImageGallery";
+import ImageGallery from "./components/ImageGallery";
 import { IProduct } from "@/models/Product";
-import { apiClient } from "@/library/api-client";
+import { apiClient } from "@/lib/api-client";
 
 export default function Home() {
   const [products, setProducts] = useState<IProduct[]>([]);

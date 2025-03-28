@@ -53,8 +53,8 @@ export default function Header() {
                         {session.user?.email?.split("@")[0]}
                       </span>
                     </li>
-                    <div className="divider my-1"></div>
-                    {session.user?.role === "admin" && (
+                    <div className="divider my-1 bg-gray-500"></div>
+                    {session?.user.role === "admin" && (
                       <li>
                         <Link
                           href="/admin"

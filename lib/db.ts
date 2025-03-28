@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-const DATABASE_URI = process.env.DATABASE_URI!;
+const MONGODB_URI = process.env.MONGODB_URI!;
 
-if (!DATABASE_URI) {
+if (!MONGODB_URI) {
   throw new Error(
-    "Please define the DATABASE_URI environment variable inside .env.local"
+    "Please define the MONGODB_URI environment variable inside .env.local"
   );
 }
 
@@ -26,14 +26,12 @@ export async function connectToDatabase() {
     };
 
     cached.promise = mongoose
-      .connect(DATABASE_URI, opts)
+      .connect(MONGODB_URI, opts)
       .then(() => mongoose.connection);
   }
 
   try {
-      console.log("Connected to database", cached.conn);
     cached.conn = await cached.promise;
-    
   } catch (e) {
     cached.promise = null;
     throw e;

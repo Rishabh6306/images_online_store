@@ -7,7 +7,7 @@ import { IKUploadResponse } from "imagekitio-next/dist/types/components/IKUpload
 import { Loader2, Plus, Trash2 } from "lucide-react";
 import { useNotification } from "./Notification";
 import { IMAGE_VARIANTS, ImageVariantType } from "@/models/Product";
-import { apiClient, ProductFormData } from "@/library/api-client";
+import { apiClient, ProductFormData } from "@/lib/api-client";
 
 export default function AdminProductForm() {
   const [loading, setLoading] = useState(false);
